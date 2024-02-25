@@ -24,5 +24,3 @@ def elimina_usuarios():
         db.session.delete(usuario)
     db.session.commit()
     return "Operacion exitosa"
-
-print(muestra_usuarios())
