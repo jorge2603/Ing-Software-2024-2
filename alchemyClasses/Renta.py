@@ -6,7 +6,7 @@ class Renta(db.Model):
     idRentar = Column(Integer, primary_key=True, autoincrement=True)
     idUsuario = Column(Integer,ForeignKey('usuarios.idUsuario'), nullable=False)
     idPelicula = Column(Integer,ForeignKey('peliculas.idPelicula'), nullable=False)
-    fechaRenta = Column(DateTime, nullable=False)
+    fecha_renta = Column(DateTime, nullable=False)
     dias_de_renta = Column(Integer)
     estatus = Column(Integer)
 
@@ -18,4 +18,4 @@ class Renta(db.Model):
         self.estatus = estatus
 
     def __str__(self):
-        return f'IdUsuario:{self.idUsuario}\nIdPelicula:{self.idPelicula}\nFecha de Renta:{self.fechaRenta}\nDias de Renta:{self.dias_de_renta}\nEstatus:{self.estatus}'
+        return f'IdUsuario:{self.idUsuario}\nIdPelicula:{self.idPelicula}\nFecha de Renta:{self.fecha_renta}\nDias de Renta:{self.dias_de_renta}\nEstatus:{self.estatus}'
