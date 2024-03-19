@@ -32,13 +32,23 @@ def actualizar_pelicula():
     if request.method == 'GET':
         return render_template('actualizar_pelicula.html')
     else:
-        id_pelicula = request.form['id_pelicula']
+        id_pelicula = request.form['id']
         nombre = request.form['nombre']
         genero = request.form['genero']
         duracion = request.form['duracion']
         inventario = request.form['inventario']
         actualiza_pelicula(id_pelicula,nombre,genero,duracion,inventario)
         return "Operacion exitosa"
+    
+@pelicula_blueprint.route('/eliminar',methods=['GET', 'POST']) #localhost:5000/peliculas/eliminar
+def eliminar_pelicula():
+    if request.method == 'GET':
+        return render_template('elimina_pelicula.html')
+    else:
+        id_pelicula = request.form['id']
+        elimina_pelicula(id_pelicula)
+        return "Operacion exitosa"
+    
 
 
 

@@ -1,6 +1,12 @@
 from alchemyClasses import db
 from alchemyClasses.Usuario import Usuario
 
+def agrega_usuario(nombre, apPat, apMat,email,password,superUser,profilePicture=None):
+    usuario = Usuario(nombre, apPat, apMat,email,password,superUser)
+    db.session.add(usuario)
+    db.session.commit()
+    return "Operacion exitosa"
+   
 def muestra_usuarios():
     return Usuario.query.all()
 

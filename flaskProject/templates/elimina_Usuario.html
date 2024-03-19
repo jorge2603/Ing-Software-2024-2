@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eliminar Usuario</title>
+</head>
+<body>
+    <h1>Elimina un Usuario</h1>
+    <form method="post">
+    <label for="id">Ingrese el id:</label>
+    <input type="text" name="id" id="id"/>
+    <br>
+    <button>Borrar usuario</button>
+    </form>
+    {% if get_flashed_messages() %}
+        {% for message in get_flashed_messages() %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>

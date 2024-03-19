@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Usuario</title>
+</head>
+<body>
+    <h1>Crear una Usuario</h1>
+    <form method="post">
+    <label for="name">Ingrese el nombre:</label>
+    <input type="text" name="nombre" id="nombre"/>
+    <br>
+    <label for="apPat">Ingrese el apellido paterno:</label>
+    <input type="text" name="apPat" id="apPat"/>
+    <br>
+    <label for="apMat">Ingrese el apellido materno:</label>
+    <input type="text" name="apMat" id="apMat"/>
+    <br>
+    <label for="email">Ingrese el correo electronico:</label>
+    <input type="text" name="email" id="email"/>
+    <br>
+    <label for="password">Ingrese su contrasena:</label>
+    <input type="text" name="password" id="password"/>
+    <br>
+    <label for="superUser">Es superUser?:</label>
+    <input type="text" name="superUser" id="superUser"/>
+    <br>
+    <button>Crear pelicula</button>
+    </form>
+    {% if get_flashed_messages() %}
+        {% for message in get_flashed_messages() %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>

@@ -2,6 +2,7 @@ from flask import Flask, render_template
 
 from alchemyClasses import db
 from contollers.PrimerControlador import mi_primer_blueprint
+from contollers.ControllerUsuario import usuario_blueprint
 
 from contollers.ControllerPeliculas import pelicula_blueprint
 from models.model_Pelicula import *
@@ -16,6 +17,7 @@ app.config.from_mapping(
 
 app.register_blueprint(mi_primer_blueprint)
 app.register_blueprint(pelicula_blueprint)
+app.register_blueprint(usuario_blueprint)
 
 @app.route('/')
 def hello_world():  # put application's code here
